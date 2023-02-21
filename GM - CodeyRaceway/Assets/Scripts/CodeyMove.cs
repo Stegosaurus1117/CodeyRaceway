@@ -13,7 +13,7 @@ public class CodeyMove : MonoBehaviour
     public float levamount = 1000f;
     private float originalY;
     public float heightbuffer = 0.5f;
-    public ObjectReferences references;
+    //public ObjectReferences references;
 
     void Start()
     {
