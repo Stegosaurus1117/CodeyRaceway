@@ -7,12 +7,15 @@ public class NavMeshMovement : MonoBehaviour
 {
     public Transform goal;
     private NavMeshAgent agent;
-    public Transform player;
+    public GameObject player;
+    public GameObject[] PotTargets;
     // Start is called before the first frame update
     private void Start()
     {
+        
         agent = GetComponent<NavMeshAgent>();
         agent.destination = goal.position;
+        PotTargets = new GameObject[GameObject.FindGameObjectsWithTag("Obstacle").Length;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,10 +34,14 @@ public class NavMeshMovement : MonoBehaviour
 
     private void findTarget()
     {
-        GameObject[] array = GameObject.FindGameObjectsWithTag("obstacle");
+        
+        
+        /*GameObject[] array = GameObject.FindGameObjectsWithTag("obstacle");
         foreach (GameObject obs in array)
         {
             
-        }
+        }*/
     }
+
+  
 }
