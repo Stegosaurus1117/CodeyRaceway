@@ -13,14 +13,20 @@ public class NavMeshMovement : MonoBehaviour
     private void Start()
     {
         
+        PotTargets = GameObject.FindGameObjectsWithTag("Obstacle");
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
-        PotTargets = new GameObject[GameObject.FindGameObjectsWithTag("Obstacle").Length;
+
+        ChangeObs();
+
+       
+        InvokeRepeating("ChangeObs()", 1f, 2f);
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             collision.gameObject.SetActive(false);
             gameObject.SetActive(false);
@@ -29,18 +35,25 @@ public class NavMeshMovement : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(player.position);
+        
     }
 
     private void findTarget()
     {
         
-        
-        /*GameObject[] array = GameObject.FindGameObjectsWithTag("obstacle");
-        foreach (GameObject obs in array)
+
+        //GameObject[] array = GameObject.FindGameObjectsWithTag("obstacle");
+        for (int i = 0; i < PotTargets.Length; i++)
         {
-            
-        }*/
+           
+        }
+    }
+
+    private void ChangeObs()
+    {
+        int randomobs = Random.Range(0, PotTargets.Length - 1);
+        goal = PotTargets[randomobs].transform;
+        agent.destination = goal.position;
     }
 
   

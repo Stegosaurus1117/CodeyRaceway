@@ -38,6 +38,7 @@ public class SelectRandomPowerup : MonoBehaviour
         {
             randomNumberInList = Random.Range(0, powerupList.Count);
             chosenPowerup = powerupList[randomNumberInList];
+            
             collected = true;
         }
     }

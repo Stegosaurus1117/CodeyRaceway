@@ -15,7 +15,7 @@ public class ShellMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             collision.gameObject.SetActive(false);
             gameObject.SetActive(false);

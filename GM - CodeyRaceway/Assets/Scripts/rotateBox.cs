@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class rotateBox : MonoBehaviour
 {
-    public float spinSpeed = 10f;
+    public float spinSpeed = 1;
     private float timeElapsed = 0f;
     public float ybuffer = 10f;
 
