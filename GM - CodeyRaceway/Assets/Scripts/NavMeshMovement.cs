@@ -24,11 +24,11 @@ public class NavMeshMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if (other.gameObject.tag == "Obstacle")
         {
-            collision.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }

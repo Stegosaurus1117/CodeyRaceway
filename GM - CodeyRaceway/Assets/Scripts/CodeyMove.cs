@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 public class CodeyMove : MonoBehaviour
 {
     public float Speed = 15f;
@@ -47,4 +50,13 @@ public class CodeyMove : MonoBehaviour
         }
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "terrain")
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }

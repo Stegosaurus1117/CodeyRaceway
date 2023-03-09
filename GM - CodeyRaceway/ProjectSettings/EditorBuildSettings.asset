@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CodeyRaceway.unity
+    guid: 11a268e9d3669d6449f62de3a0031019
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 973d08706ed36f94483c946dea77975e
   m_configObjects: {}
